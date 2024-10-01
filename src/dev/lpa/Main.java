@@ -39,6 +39,10 @@ public class Main {
 
     List<Future<Long>> futures = threadPool.invokeAll(tasks);
 
+    System.out.println("Parallelism = " + threadPool.getParallelism()); // ForkJoinPool needed
+    System.out.println("Pool size = " + threadPool.getPoolSize());
+    System.out.println("Steal count = " + threadPool.getStealCount());
+
     long taskSum = 0;
     for (Future<Long> future : futures) {
       taskSum += future.get();
