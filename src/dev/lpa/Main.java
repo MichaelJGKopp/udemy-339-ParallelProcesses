@@ -17,7 +17,7 @@ public class Main {
     long sum = Arrays.stream(numbers).sum();
     System.out.println("sum = " + sum);
 
-    ForkJoinPool threadPool = (ForkJoinPool) Executors.newWorkStealingPool(4);
+    ForkJoinPool threadPool = ForkJoinPool.commonPool();
     // parallelism usually set to the number of cpus on your system or less
     // not the number of threads technically
 
